@@ -68,8 +68,16 @@ jsx:
     跳转到Route
 4. mobx
 ```
+//bash
 yarn run eject //暴露配置文件
 yarn add @babel/plugin-proposal-decorators
+
 ...
 
+//package.json
+"plugins": [
+      ["@babel/plugin-proposal-decorators", {"legacy": true}]
+]
+
 ```
+5. useRef
