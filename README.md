@@ -57,7 +57,7 @@ jsx:
     );
     ```
 3. react-router使用
-关键点：
+关键点： 
 - Router：BrowseRouter；HashRouter  
     包裹router的显示范围
 - Route：  
