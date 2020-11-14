@@ -56,3 +56,13 @@ jsx:
         </div>
     );
     ```
+3. react-router使用
+关键点：
+- Router：BrowseRouter；HashRouter  
+    包裹router的显示范围
+- Route：  
+    每个可通过router跳转的页面为一个Route
+- Switch  
+    包裹Route
+- Link：Link；NavLink  
+    跳转到Route
