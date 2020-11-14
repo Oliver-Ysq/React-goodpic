@@ -66,3 +66,5 @@ jsx:
     包裹Route
 - Link：Link；NavLink  
     跳转到Route
+4. mobx
+`yarn add @babel/plugin-proposal-decorators`

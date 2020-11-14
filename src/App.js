@@ -8,6 +8,8 @@ import React, {Suspense, lazy} from "react";
 const Home = lazy(() => import("./pages/Home"))
 const History = lazy(() => import("./pages/History"))
 const About = lazy(() => import("./pages/About"))
+const Login = lazy(() => import("./pages/Login"))
+const Register = lazy(() => import("./pages/Register"))
 
 function App() {
     return (
@@ -20,6 +22,8 @@ function App() {
                         <Route path='/' exact component={Home}/>
                         <Route path='/about' exact component={About}/>
                         <Route path='/history' exact component={History}/>
+                        <Route path='/login' exact component={Login}/>
+                        <Route path='/register' exact component={Register}/>
                     </Switch>
                 </Suspense>
             </main>
