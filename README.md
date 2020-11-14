@@ -67,4 +67,9 @@ jsx:
 - Link：Link；NavLink  
     跳转到Route
 4. mobx
-`yarn add @babel/plugin-proposal-decorators`
+```
+yarn run eject //暴露配置文件
+yarn add @babel/plugin-proposal-decorators
+...
+
+```
