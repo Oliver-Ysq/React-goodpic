@@ -1,52 +1,58 @@
-import {makeAutoObservable} from 'mobx'
+import {makeAutoObservable} from 'mobx';
+import {Auth} from '../models/index';
+import UserStore from './user';
+
+// import {User} from "leancloud-storage";
 
 class AuthStore {
     constructor() {
-        makeAutoObservable(this)
+        makeAutoObservable(this);
     }
 
-    isLogin = false
-    isLoading = false
     values = {
-        username: 'Oliver',
-        password: '',
-    }
-
-    setIsLogin(isLogin) {
-        this.isLogin = isLogin
-    }
+        username: '', password: '',
+    };
 
     setUsername(name) {
-        this.values.username = name
+        this.values.username = name;
     }
 
     setPassword(password) {
-        this.values.username = password
+        this.values.password = password;
     }
 
     login() {
-        console.log('登录中...')
-        this.isLoading = true
-        setTimeout(() => {
-            console.log('登陆成功')
-            this.setIsLogin(true)
-            this.isLoading = false
-        }, 1000)
+        return new Promise((resolve, reject) => {
+            Auth.Login(this.values.username, this.values.password).then(user => {
+                console.log('登录成功');
+                UserStore.pullUser();
+                resolve(user);
+            }).catch(err => {
+                console.log('登录失败');
+                UserStore.resetUser();
+                reject(err);
+            });
+        });
     }
 
     register() {
-        console.log('注册中...')
-        this.isLoading = true
-        setTimeout(() => {
-            console.log('注册成功')
-            this.setIsLogin(true)
-            this.isLoading = false
-        }, 1000)
+        return new Promise((resolve, reject) => {
+            Auth.register(this.values.username, this.values.password).then(user => {
+                console.log('注册成功');
+                UserStore.pullUser();
+                resolve(user);
+            }).catch(err => {
+                console.log('注册失败');
+                UserStore.resetUser();
+                reject(err);
+            });
+        });
     }
 
     logout() {
-        console.log('已注销')
+        Auth.Logout();
+        UserStore.resetUser();
     }
 }
 
-export {AuthStore}
+export default new AuthStore();

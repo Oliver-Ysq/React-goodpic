@@ -1,9 +1,10 @@
 import {createContext, useContext} from 'react'
-import {AuthStore} from './auth'
-
+import AuthStore from './auth'
+import UserStore from './user'
 // 创建上下文
 const context = createContext({
-    AuthStore: new AuthStore()
+    AuthStore: AuthStore,
+    UserStore: UserStore
 })
 
 export const useStores = () => useContext(context)
