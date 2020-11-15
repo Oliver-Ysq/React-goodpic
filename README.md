@@ -67,17 +67,42 @@ jsx:
 - Link：Link；NavLink  
     跳转到Route
 4. mobx
+三步走：
+（1）创建仓库
 ```
-//bash
-yarn run eject //暴露配置文件
-yarn add @babel/plugin-proposal-decorators
+import {makeAutoObservable} from 'mobx'
+class myStore{
+    count: 0;
+    add(){
+        this.count++
+    }   
+}
+export {myStore}
+```
+（2）使用Context注入仓库
+```
+import React, {createContext, useContext} from 'react'
+import {myStore} from './myStore'
 
-...
+const context = createContext({
+    myStore: new myStore()
+})
 
-//package.json
-"plugins": [
-      ["@babel/plugin-proposal-decorators", {"legacy": true}]
-]
-
+export const useStores = () => useContext(context)
+```
+（3）在组件中使用
+```
+const {myStore} = useStores()
+//可以使用myStore中的方法
+myStore.count
+myStore.add()
 ```
 5. useRef
+```
+const count = useRef(0)
+console.log(count.current)
+```
+6. antd
+```
+
+```
