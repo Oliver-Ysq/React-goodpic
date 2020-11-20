@@ -26,9 +26,9 @@
   resolved "https://registry.npm.taobao.org/@ant-design/icons-svg/download/@ant-design/icons-svg-4.1.0.tgz#480b025f4b20ef7fe8f47d4a4846e4fee84ea06c"
   integrity sha1-SAsCX0sg73/o9H1KSEbk/uhOoGw=
 
-"@ant-design/icons@^4.2.1", "@ant-design/icons@^4.2.2":
+"@ant-design/icons@^4.2.1", "@ant-design/icons@^4.2.2", "@ant-design/icons@^4.3.0":
   version "4.3.0"
-  resolved "https://registry.npm.taobao.org/@ant-design/icons/download/@ant-design/icons-4.3.0.tgz?cache=0&sync_timestamp=1605269071889&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40ant-design%2Ficons%2Fdownload%2F%40ant-design%2Ficons-4.3.0.tgz#420e0cd527486c0fe57f81310d681950fc4cfacf"
+  resolved "https://registry.npm.taobao.org/@ant-design/icons/download/@ant-design/icons-4.3.0.tgz?cache=0&sync_timestamp=1605268034416&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40ant-design%2Ficons%2Fdownload%2F%40ant-design%2Ficons-4.3.0.tgz#420e0cd527486c0fe57f81310d681950fc4cfacf"
   integrity sha1-Qg4M1SdIbA/lf4ExDWgZUPxM+s8=
   dependencies:
     "@ant-design/colors" "^5.0.0"
@@ -9375,7 +9375,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types@^15.5.10, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -9994,6 +9994,13 @@ react-error-overlay@^6.0.8:
   version "6.0.8"
   resolved "https://registry.npm.taobao.org/react-error-overlay/download/react-error-overlay-6.0.8.tgz?cache=0&sync_timestamp=1603462591102&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-error-overlay%2Fdownload%2Freact-error-overlay-6.0.8.tgz#474ed11d04fc6bda3af643447d85e9127ed6b5de"
   integrity sha1-R07RHQT8a9o69kNEfYXpEn7Wtd4=
+
+react-infinite-scroller@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.npm.taobao.org/react-infinite-scroller/download/react-infinite-scroller-1.2.4.tgz#f67eaec4940a4ce6417bebdd6e3433bfc38826e9"
+  integrity sha1-9n6uxJQKTOZBe+vdbjQzv8OIJuk=
+  dependencies:
+    prop-types "^15.5.8"
 
 react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"

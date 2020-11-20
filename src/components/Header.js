@@ -1,5 +1,4 @@
 import React from 'react';
-import LogoUrl from '../pages/logo.svg';
 import styled from 'styled-components';
 import {Button} from 'antd';
 import {useStores} from "../stores";
@@ -8,8 +7,8 @@ import {NavLink, useHistory} from 'react-router-dom';
 
 
 const Header = styled.header`
-    background-color: #02101f;
-    padding: 10px 100px;
+    background-color: #102a38;
+    padding: 10px 140px;
     display: flex;
     align-items: center;
     color: #fff;
@@ -30,6 +29,8 @@ const Login = styled.div`
 const MyButton = styled(Button)`
   margin-left: 20px;
   text-align: center;
+  background: #288388;
+  border-color: #288388;
 `;
 
 
@@ -50,10 +51,10 @@ const Component = observer(() => {
         history.push("/register");
     };
     return (<Header>
-        <Logo src={LogoUrl}/>
+        <Logo src="image.png"/>
         <nav>
             <StyledLink to="/" activeClassName="active" exact>首页</StyledLink>
-            <StyledLink to="/history" activeClassName="active">历史记录</StyledLink>
+            <StyledLink to="/history" activeClassName="active">图片仓库</StyledLink>
             <StyledLink to="/about" activeClassName="active">关于我</StyledLink>
         </nav>
         <Login>

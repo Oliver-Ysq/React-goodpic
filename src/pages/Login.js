@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import {useStores} from "../stores";
 import {useHistory} from 'react-router-dom';
 
-
+const MyButton = styled(Button)`
+    background: #288388;
+    border: none;
+`
 const Wrapper = styled.div`
   max-width: 600px;
   margin: 30px auto;
@@ -96,9 +99,9 @@ const Component = () => {
             </Form.Item>
 
             <Form.Item {...tailLayout}>
-                <Button type="primary" htmlType="submit">
+                <MyButton type="primary" htmlType="submit">
                     Login
-                </Button>
+                </MyButton>
             </Form.Item>
         </Form>
     </Wrapper>);
