@@ -12,11 +12,20 @@ const Flex = styled.div`
   align-items: center;
   border-bottom: 1px solid #000;
   padding-bottom: 25px;
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 const FlexUrl = styled.div`
   height: 120px;
-  line-height: 120px;
+  @media (max-width: 500px) {
+    height: 60px;
+    margin-top: 12px;
+  }
+  @media (min-width: 500px) {
+    line-height: 120px;
+  }
 `;
 const A = styled.a`
   border-bottom: 1px solid;
@@ -33,11 +42,14 @@ const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 500px) {
+    height: 50px;
+  }
 `;
 
 const Img = styled.img`
   width: 100px;
-  height: 120px;
+  height: 100px;
   object-fit: contain;
   border: 1px solid #eee;
   margin-left: 10px;

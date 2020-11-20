@@ -79,7 +79,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "upload": "cd build; git add .; git commit -m \"update\"; git remote add origin https://github.com/Oliver-Ysq/goodpic.git; git push -f origin master"
   },
   "eslintConfig": {
     "extends": [

@@ -62,13 +62,17 @@ export const Uploader = {
   },
 
   deleteItem(objId) {
-    console.log(objId)
+    console.log(objId);
     const image = AV.Object.createWithoutData("Image", objId);
-    image.destroy();
-    console.log('delete')
+    return new Promise((resolve, reject) => {
+      image
+        .destroy()
+        .then((res) => resolve(res))
+        .catch((err) => reject(err));
+    });
   },
 
-  find({ page = 0, limit = 10 }) {
+  find({ page = 0, limit = 5 }) {
     const query = new AV.Query("Image");
     query.include("owner");
     query.limit(limit);

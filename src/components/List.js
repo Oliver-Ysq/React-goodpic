@@ -9,6 +9,8 @@ const Component = observer(() => {
   const { HistoryStore, UserStore } = useStores();
   const loadMore = () => {
     HistoryStore.find();
+    HistoryStore.addPage();
+    console.log("loadmore");
   };
 
   useEffect(() => {

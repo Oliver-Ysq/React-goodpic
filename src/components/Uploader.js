@@ -14,9 +14,52 @@ const Result = styled.div`
 const H1 = styled.h2`
   margin: 10px 0;
   text-align: center;
+  color: rgb(40, 131, 136);
+  font-weight: bold;
 `;
 const Img = styled.img`
   max-width: 300px;
+  @media (max-width: 500px) {
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
+const DL = styled.dl`
+  @media (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+`;
+
+const DT = styled.dt`
+  font-size: 20px;
+  color: rgb(16, 42, 56);
+  margin: 10px auto;
+`;
+
+const Myinput = styled.input`
+  @media (max-width: 500px) {
+    margin-bottom: 10px;
+  }
+  @media (min-width: 500px) {
+    margin-left: 10px;
+  }
+`;
+
+const InputWrapper = styled.dd`
+  display: flex;
+  flex-direction: row;
+  @media (min-width: 500px) {
+    justify-content: flex-start;
+  }
+  @media (max-width: 500px) {
+    flex-direction: column;
+    justify-content: space-between;
+  }
 `;
 
 const { Dragger } = Upload;
@@ -95,11 +138,11 @@ const Component = observer(() => {
         </Dragger>
       </Spin>
       <div>
-        {ImageStore.serverFile!==null ? (
+        {ImageStore.serverFile !== null ? (
           <Result>
             <H1>上传结果</H1>
-            <dl>
-              <dt>线上地址</dt>
+            <DL>
+              <DT>线上地址</DT>
               <dd>
                 <a
                   target="_blank"
@@ -109,33 +152,33 @@ const Component = observer(() => {
                   {ImageStore.serverFile.attributes.url.attributes.url}
                 </a>
               </dd>
-              <dt>文件名</dt>
-              <dd>{ImageStore.filename}</dd>
-              <dt>图片预览</dt>
+              {/* <DT>文件名</DT>
+              <dd>{ImageStore.filename}</dd> */}
+              <DT>图片预览</DT>
               <dd>
                 <Img
                   src={ImageStore.serverFile.attributes.url.attributes.url}
                 />
               </dd>
-              <dt>尺寸定制</dt>
-              <dd>
-                <input
+              <DT>尺寸定制</DT>
+              <InputWrapper>
+                <Myinput
                   onChange={() => store.setWidth()}
                   placeholder="max width(not necessary)"
                   ref={wRef}
                 />
-                <input
+                <Myinput
                   onChange={() => store.setHeight()}
                   placeholder="max height(not necessary)"
                   ref={hRef}
                 />
-              </dd>
+              </InputWrapper>
               <dd>
                 <a target="_blank" rel="noreferrer" href={store.fullStr}>
                   {store.fullStr}
                 </a>
               </dd>
-            </dl>
+            </DL>
           </Result>
         ) : null}
       </div>

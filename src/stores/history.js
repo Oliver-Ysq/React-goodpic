@@ -2,8 +2,6 @@ import { makeAutoObservable } from "mobx";
 import { message } from "antd";
 import { Uploader } from "../models/index";
 
-// import {User} from "leancloud-storage";
-
 class HistoryStore {
   constructor() {
     makeAutoObservable(this);
@@ -19,10 +17,15 @@ class HistoryStore {
     this.list = this.list.concat(newList);
   }
 
+  addPage() {
+    this.page++;
+  }
+
   find() {
     this.isLoading = true;
     Uploader.find({ page: this.page, limit: this.limit })
       .then((newList) => {
+        console.log(newList);
         this.append(newList);
         if (newList.length < this.limit) {
           this.hasMore = false;
@@ -37,7 +40,13 @@ class HistoryStore {
   }
 
   deleteItem(objItem) {
-    Uploader.deleteItem(objItem);
+    Uploader.deleteItem(objItem)
+      .then(() => {
+        message.success("删除成功");
+      })
+      .catch(() => {
+        message.warning("删除失败");
+      });
     this.list = this.list.filter((item) => item.id !== objItem);
   }
 
